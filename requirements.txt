@@ -1,0 +1,33 @@
+# YouTube RAG — pinned dependencies
+#
+# Verified working together on Python 3.12 / 3.13 / 3.14 (macOS arm64, Linux).
+# Only *direct* dependencies are listed; pip resolves the transitive tree.
+# Install with:  pip install -r requirements.txt
+
+# --- UI -------------------------------------------------------------------
+streamlit==1.60.0
+
+# --- Orchestration --------------------------------------------------------
+langgraph==1.2.10
+langchain-core==1.5.3
+langchain-text-splitters==1.1.2
+
+# --- Google Gemini (LLM + embeddings) -------------------------------------
+langchain-google-genai==4.3.2
+
+# --- Vector store ---------------------------------------------------------
+# langchain-chroma depends on chromadb, but it is pinned explicitly so the
+# storage format cannot change underneath an existing ./chroma_db folder.
+langchain-chroma==1.1.0
+chromadb==1.5.9
+
+# --- YouTube transcripts --------------------------------------------------
+# NOTE: 1.x replaced the old static `YouTubeTranscriptApi.get_transcript()`
+# with an instance API (`YouTubeTranscriptApi().fetch()`); src/transcript.py
+# targets the 1.x interface, so do not downgrade below 1.0.
+youtube-transcript-api==1.2.4
+
+# --- Support --------------------------------------------------------------
+python-dotenv==1.2.2
+numpy==2.5.1
+requests==2.34.2
