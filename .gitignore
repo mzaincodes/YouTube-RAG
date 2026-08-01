@@ -1,0 +1,33 @@
+# Secrets — never commit the real key
+.env
+
+# Vector database (regenerable; can grow to hundreds of MB)
+chroma_db/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.Python
+build/
+dist/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
